@@ -54,7 +54,7 @@ World.prototype.render = function(){
 World.prototype.checkLines = function(){
   var bs = this.blocks,
       removed = false;
-  for(var i=0,len = bs.length;i<len;i++){
+  for(var i=bs.length;--i>0;){
     var row = bs[i],
         row_len = World.MAX_WIDTH;
     if(row){

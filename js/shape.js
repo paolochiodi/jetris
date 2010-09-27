@@ -74,7 +74,7 @@ Shape.prototype.rotate = function(){
   
   min_x += center_x;
   min_y += center_y;
-  
+
   for(var i=0, len = bs.length; i < len; i++){
     b = bs[i];
     
@@ -82,16 +82,16 @@ Shape.prototype.rotate = function(){
         y = b.y - min_y,
         swap = y;
 
-    y = Math.abs(x);
-    x = (swap);
+    y = x;
+    x = -swap;
     
     new_blocks[new_blocks.length]  = new Block(Math.ceil(min_x + x), Math.ceil(min_y + y), b.color, b.lineColor);
   }
   
   var w = this.world;
   
-  for(var i=0, len = bs.length; i < len; i++){
-    b = bs[i];
+  for(var i=0, len = new_blocks.length; i < len; i++){
+    b = new_blocks[i];
     if(w.is_busy(b.x, b.y)){
       return;
     }
@@ -160,36 +160,3 @@ Shape.prototype.collides = function(op_x, op_y){
   return false;
 }
 
-
-/*
-111
-001
-000
-   
-001
-001
-011
-  
- 1
- 1
-11
-  
-var min_x
-var min_y
-var max_x
-var max_y
-
-
-x_sign
-
-
-
-y * x/(Math.sqrt(x*x + y*y)) = new_y?
-x * y/(Math.sqrt(x*x + y*y)) = new_x?
-
-45 gradi
-
--3
--3
-
-*/
