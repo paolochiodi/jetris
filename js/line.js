@@ -1,7 +1,10 @@
 function Line(world){
   var c = Line.color, lc = Line.lineColor;
   this.world = world;
-  this.blocks = [new Block(0,0,c,lc), new Block(1,0,c,lc), new Block(2,0,c,lc), new Block(3,0,c,lc)];
+  
+  initial_x = Math.floor(World.MAX_WIDTH / 2)
+  
+  this.blocks = [new Block(initial_x-1,0,c,lc), new Block(initial_x,0,c,lc), new Block(++initial_x,0,c,lc), new Block(++initial_x,0,c,lc)];
 }
 
 

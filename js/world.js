@@ -7,7 +7,7 @@ function World(ctx){
 
 World.CELL_SIZE = 20;
 World.MAX_HEIGHT = 20;
-World.MAX_WIDTH = 14;
+World.MAX_WIDTH = 15;
 World.shapes = [Line, Square, AngleDown, AngleUp, S, Z];
 
 World.prototype.getRandomShape = function(){
